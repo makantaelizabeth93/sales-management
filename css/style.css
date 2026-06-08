@@ -1,0 +1,74 @@
+/* Global layout styles */
+body {
+    min-height: 100vh;
+    background: #f8f9fa;
+    overflow-x: hidden;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar layout settings for desktop */
+#sidebar-wrapper {
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#page-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#page-content-wrapper .container-fluid {
+    flex: 1;
+}
+
+footer.footer {
+    width: 100%;
+    background: #f8f9fa;
+}
+
+.sidebar-heading {
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
+}
+
+.list-group-item.active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+
+/* Responsive rules for small screens (mobile) */
+@media (max-width: 768px) {
+    /* Hide sidebar by default on mobile */
+    #sidebar-wrapper {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1050;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Show sidebar when toggled on mobile */
+    #wrapper.toggled #sidebar-wrapper {
+        transform: translateX(0);
+    }
+    
+    #page-content-wrapper {
+        width: 100%;
+    }
+}
+
+.card-small {
+    min-height: 160px;
+}
